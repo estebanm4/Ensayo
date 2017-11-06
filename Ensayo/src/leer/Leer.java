@@ -2,6 +2,7 @@ package leer;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class Leer {
     
@@ -9,6 +10,7 @@ public class Leer {
     File miArchivo;
     FileReader lectura; //Vaeiable para leer
     String cadena;
+    String ventana = "";  
     
     miArchivo = new File("ejemploLectura.txt");
     
@@ -29,6 +31,7 @@ public class Leer {
                     cadena = almacenamiento.readLine(); //Almacena una línea de Texto
                     if(cadena != null){
                         System.out.println(cadena);
+                        ventana = ventana + cadena + "\n";
                     }
                 } catch (IOException ex) {
                     Logger.getLogger(Leer.class.getName()).log(Level.SEVERE, null, ex);
@@ -43,5 +46,6 @@ public class Leer {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Leer.class.getName()).log(Level.SEVERE, null, ex);
         }
+        JOptionPane.showMessageDialog(null, ventana, "Datos del archivo", 1 );
     }   
 }
