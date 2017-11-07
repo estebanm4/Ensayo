@@ -1,1 +1,2 @@
-Hola Juan, Bienvenido al Himalaya
+Hola Juan, bienvenido
+Quisiste decir: Programación Orientada a Objetos?

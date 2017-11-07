@@ -8,7 +8,7 @@ public class Leer {
     
     public static void main(String[] args) {
     File miArchivo;
-    FileReader lectura; //Vaeiable para leer
+    FileReader lectura; //Variable para leer
     String cadena;
     String ventana = "";  
     
