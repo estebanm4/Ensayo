@@ -1,5 +1,4 @@
 package conservando;
-
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,51 +10,52 @@ public class ConservandoPractica {
         File archivo;
         FileWriter escribir;
         PrintWriter linea;
-        String nombre = "", dir = "", email = "";
-
-        archivo = new File("usuarios.txt");
-
-        if (!archivo.exists()) {
+        String nombre="", carrera="", universidad ="";
+        
+        archivo = new File("datos.txt");
+        
+        if(!archivo.exists()){
             try {
                 archivo.createNewFile();
-                nombre = JOptionPane.showInputDialog(null, "Igrese el nombre: ", "Datos del Sistema", 3);
-                dir = JOptionPane.showInputDialog(null, "Igrese la direccion: ", "Datos del Sistema", 3);
-                email = JOptionPane.showInputDialog(null, "Igrese el e-mail: ", "Datos del Sistema", 3);
-
+                nombre = JOptionPane.showInputDialog(null, "Escriba su nombre: ", "Datos del Sistema", 3);
+                carrera = JOptionPane.showInputDialog(null, "Escriba su carrera: ", "Datos del Sistema", 3);
+                universidad = JOptionPane.showInputDialog(null, "Escriba su universidad: ", "Datos del Sistema", 3);
+                
                 escribir = new FileWriter(archivo, true);
                 linea = new PrintWriter(escribir);
-
+                
                 linea.println(nombre);
-                linea.println(dir);
-                linea.println(email);
-
+                linea.println(carrera);
+                linea.println(universidad);
+                
                 linea.close();
-                escribir.close();
-
+                escribir.close();               
+                
             } catch (IOException ex) {
                 Logger.getLogger(ConservandoPractica.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             try {
-                archivo.createNewFile();
-                nombre = JOptionPane.showInputDialog(null, "Igrese el nombre: ", "Datos del Sistema", 3);
-                dir = JOptionPane.showInputDialog(null, "Igrese la direccion: ", "Datos del Sistema", 3);
-                email = JOptionPane.showInputDialog(null, "Igrese el e-mail: ", "Datos del Sistema", 3);
-
+                
+                nombre = JOptionPane.showInputDialog(null, "Escriba su nombre: ", "Datos del Sistema", 3);
+                carrera = JOptionPane.showInputDialog(null, "Escriba su carrera: ", "Datos del Sistema", 3);
+                universidad = JOptionPane.showInputDialog(null, "Escriba su universidad: ", "Datos del Sistema", 3);
+                
                 escribir = new FileWriter(archivo, true);
                 linea = new PrintWriter(escribir);
-
+                
                 linea.println(nombre);
-                linea.println(dir);
-                linea.println(email);
-
+                linea.println(carrera);
+                linea.println(universidad);
+                
                 linea.close();
-                escribir.close();
-
+                escribir.close();               
+                
             } catch (IOException ex) {
                 Logger.getLogger(ConservandoPractica.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
         }
-
+        
     }
 }
